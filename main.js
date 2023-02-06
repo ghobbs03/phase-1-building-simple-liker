@@ -4,7 +4,20 @@ const FULL_HEART = '♥'
 
 // Your JavaScript code goes here!
 
+document.querySelectorAll('.like-glyph').forEach(element => {
+  element.addEventListener('click', (e) => {
+  
 
+    if (e.target.textContent === EMPTY_HEART) { // if empty make full
+      e.target.textContent = FULL_HEART;
+      e.target.classList.add('activated-heart');
+
+    } else { // if full make empty
+      e.target.textContent = EMPTY_HEART;
+      e.target.classList.remove('activated-heart');
+    }
+  })
+  });
 
 
 //------------------------------------------------------------------------------
